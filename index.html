@@ -738,9 +738,61 @@ footer {
   transform: translateY(0);
 }
 
+.teacher-credentials{
+    margin:32px 0;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.credential-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+}
+
+.credential-icon{
+    width:64px;
+    height:64px;
+    border-radius:12px;
+    background:var(--blue-wash);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+    flex-shrink:0;
+}
+
+.credential-image{
+    width:100px;
+    height:70px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid var(--border);
+    flex-shrink:0;
+}
+
+.credential-content h4{
+    margin:0 0 4px;
+    font-size:1rem;
+    color:var(--text-dark);
+}
+
+.credential-content p{
+    margin:0;
+    color:var(--text-muted);
+    font-size:0.88rem;
+}
+
 </style>
+
 <link rel="icon" href="Eng with Will.png" type="image/png">
-  
+
 </head>
 <body>
 
@@ -836,6 +888,27 @@ footer {
       <p>
         Phương pháp giảng dạy của tôi được xây dựng trên nền tảng phân tích bản chất ngôn ngữ — không nhồi nhét, không học vẹt — nhằm phát triển tư duy ngôn ngữ độc lập cho từng học viên. Mỗi buổi học, tôi chú trọng phản hồi chi tiết và cá nhân hóa lộ trình theo điểm mạnh, điểm yếu riêng của từng em, đảm bảo học viên tự tin xử lý mọi dạng đề thi, kể cả những dạng bài chưa từng gặp.
       </p>
+      <div class="teacher-credentials">
+        <div class="credential-card">
+          <div class="credential-icon">🎓</div>
+      
+          <div class="credential-content">
+            <h4>Qualified High-school Teacher of English</h4>
+            <p>Tốt nghiệp Sư phạm Tiếng Anh (Honors)</p>
+          </div>
+        </div>
+      
+        <div class="credential-card">
+          <img src="cpe-certificate.jpg"
+               alt="Cambridge Certificate of Proficiency in English (CPE)"
+               class="credential-image">
+      
+          <div class="credential-content">
+            <h4>Cambridge Certificate of Proficiency in English (CPE)</h4>
+            <p>Level C2 CEFR</p>
+          </div>
+        </div>
+      </div>
 
       <div class="achievement-list">
         <div class="achievement-item">
