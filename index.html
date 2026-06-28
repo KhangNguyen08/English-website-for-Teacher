@@ -3,735 +3,1256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English with William | Trần Lâm Minh Huy · FCE · CAE · Luyện Thi Chuyên Anh</title>
+<title>Thầy Huy Chuyên Anh · Trần Lâm Minh Huy · Luyện Thi Chuyên Anh & Chứng Chỉ Quốc Tế</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --navy: #0D1B2A;
-  --navy-2: #162032;
-  --indigo: #4338CA;
-  --indigo-light: #818CF8;
-  --gold: #F59E0B;
-  --white: #FFFFFF;
-  --bg: #F8FAFC;
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
-  --border: #E2E8F0;
-  --coral: #F97316;
-  --teal: #0D9488;
-  --radius: 12px;
-  --radius-lg: 18px;
+  /* Primary */
+  --blue-ink:    #0D1B2A;   /* Hero + Footer */
+  --blue-dark:   #162032;   /* Navbar */
+  --blue-main:   #4338CA;   /* Primary button */
+  --blue-mid:    #5B4CF3;   /* Hover */
+  --blue-steel:  #818CF8;   /* Link */
+
+  /* Light */
+  --blue-tint:   #E0E7FF;
+  --blue-wash:   #F3F4FF;
+  --blue-pale:   #F8FAFC;
+
+  /* Accent */
+  --coral:       #F97316;
+  --coral-hover: #EA580C;
+
+  --gold:        #F59E0B;
+  --gold-light:  #FEF3C7;
+  --gold-border: #FCD34D;
+
+  /* Text */
+  --white:       #FFFFFF;
+  --text-dark:   #0F172A;
+  --text-body:   #475569;
+  --text-muted:  #94A3B8;
+
+  /* Border */
+  --border:      #E2E8F0;
+  --border-light:#EDF2F7;
+
+  /* Radius */
+  --radius:      12px;
+  --radius-lg:   18px;
+
+  /* Shadow */
+  --shadow-sm: 0 2px 10px rgba(15,23,42,.05);
+  --shadow-md: 0 10px 30px rgba(15,23,42,.08);
+  --shadow-lg: 0 20px 50px rgba(15,23,42,.12);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: 1.6;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  background: var(--blue-pale);
+  color: var(--text-dark);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── NAV ─── */
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(13,27,42,0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(22,32,50,.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 6%; height: 64px;
+  padding: 0 6%; height: 90px;
 }
+.nav-brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.nav-brand-name {
+  font-family: 'Playfair Display', serif;
+  color: var(--white); font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.nav-divider { width: 1px; height: 22px; background: rgba(255,255,255,0.18); }
+.nav-sub { font-size: 0.72rem; color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase; }
 .nav-logo {
-  font-family: 'DM Serif Display', serif;
-  color: var(--white); font-size: 1.2rem;
-  letter-spacing: -0.02em; text-decoration: none;
+  height: 55px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
 }
-.nav-logo span { color: var(--gold); }
-.nav-links { display: flex; gap: 32px; list-style: none; }
+
+.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
 .nav-links a {
-  color: rgba(255,255,255,0.7); text-decoration: none;
-  font-size: 0.875rem; font-weight: 500; transition: color 0.2s;
+  color: rgba(255,255,255,0.72); text-decoration: none;
+  font-size: 0.875rem; font-weight: 500; letter-spacing: 0.01em;
+  transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--white); }
 .nav-cta {
-  background: var(--indigo) !important; color: var(--white) !important;
-  padding: 8px 20px; border-radius: 8px; transition: background 0.2s !important;
+  background: var(--blue-main) !important;
+  color: var(--white) !important;
+  padding: 8px 22px; border-radius: 7px;
+  transition: background 0.2s !important;
 }
-.nav-cta:hover { background: #5046E5 !important; }
+.nav-cta:hover { background: var(--blue-mid) !important; }
 
-/* ─── HERO ─── */
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
 .hero {
-  background: var(--navy);
-  min-height: 88vh; display: flex; align-items: center;
-  padding: 80px 6%; position: relative; overflow: hidden;
+  background: var(--blue-ink);
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  padding: 80px 6%;
+  position: relative;
+  overflow: hidden;
+  gap: 60px;
+}
+.hero-subline {
+  display: block;
+  font-size: 0.65em;
+  font-weight: 500;
+  margin-top: 6px;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+.hero-bg-lines {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(30,96,145,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30,96,145,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 .hero-glow {
-  position: absolute; top: -100px; right: -100px;
-  width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(67,56,202,0.22) 0%, transparent 70%);
+  position: absolute; bottom: -160px; right: -80px;
+  width: 560px; height: 560px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(67,56,202,.18) 0%, transparent 68%);
   pointer-events: none;
 }
-.hero-content { max-width: 640px; position: relative; z-index: 1; }
+.hero-content { position: relative; z-index: 1; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(245,158,11,0.1);
   border: 1px solid rgba(245,158,11,0.28);
-  color: var(--gold); font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 6px 16px; border-radius: 100px; margin-bottom: 28px;
+  color: var(--gold);
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 6px 18px; border-radius: 100px; margin-bottom: 32px;
 }
 .hero h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
-  color: var(--white); line-height: 1.1;
-  letter-spacing: -0.025em; margin-bottom: 22px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  color: var(--white); line-height: 1.12;
+  letter-spacing: -0.02em; margin-bottom: 24px;
 }
-.hero h1 em { font-style: italic; color: var(--indigo-light); }
+.hero h1 em {
+  font-style: italic;
+  color: var(--blue-tint);
+}
 .hero-desc {
-  color: rgba(255,255,255,0.62); font-size: 1rem;
-  line-height: 1.75; max-width: 500px; margin-bottom: 38px;
+  color: rgba(255,255,255,0.60);
+  font-size: 1rem; line-height: 1.8;
+  max-width: 510px; margin-bottom: 40px;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--indigo); color: var(--white);
-  padding: 13px 28px; border-radius: 10px;
+  background: var(--blue-main); color: var(--white);
+  padding: 13px 30px; border-radius: 9px;
   font-size: 0.9rem; font-weight: 600; text-decoration: none;
-  border: none; cursor: pointer;
-  transition: background 0.2s, transform 0.15s; display: inline-block;
+  border: none; cursor: pointer; display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.01em;
 }
-.btn-primary:hover { background: #5046E5; transform: translateY(-1px); }
+.btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
 .btn-ghost {
-  background: transparent; color: rgba(255,255,255,0.78);
-  padding: 13px 28px; border-radius: 10px; font-size: 0.9rem;
+  background: transparent; color: rgba(255,255,255,0.75);
+  padding: 13px 28px; border-radius: 9px; font-size: 0.9rem;
   font-weight: 500; text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.18); display: inline-block;
+  border: 1px solid rgba(255,255,255,0.20); display: inline-block;
   transition: border-color 0.2s, color 0.2s;
 }
-.btn-ghost:hover { border-color: rgba(255,255,255,0.45); color: var(--white); }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.50); color: var(--white); }
+
 .hero-stats {
   display: flex; gap: 40px; margin-top: 56px;
-  padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
   flex-wrap: wrap;
 }
 .stat-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2rem; color: var(--white); line-height: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem; color: var(--white); line-height: 1;
 }
-.stat-num span { color: var(--gold); }
+.stat-num sup { font-size: 1.1rem; color: var(--gold-border); }
 .stat-label {
-  font-size: 0.76rem; color: rgba(255,255,255,0.42);
-  text-transform: uppercase; letter-spacing: 0.07em; margin-top: 4px;
+  font-size: 0.72rem; color: rgba(255,255,255,0.40);
+  text-transform: uppercase; letter-spacing: 0.09em; margin-top: 5px;
 }
 
-/* ─── SECTION BASE ─── */
-.sec-white { background: var(--white); padding: 88px 6%; }
-.sec-gray  { background: var(--bg);    padding: 88px 6%; }
-.section-eyebrow {
-  font-size: 0.73rem; font-weight: 600; color: var(--indigo);
-  text-transform: uppercase; letter-spacing: 0.13em; margin-bottom: 10px;
-}
-.section-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: var(--text-primary); line-height: 1.15;
-  letter-spacing: -0.02em; margin-bottom: 14px;
-}
-.section-sub {
-  font-size: 1rem; color: var(--text-secondary);
-  max-width: 520px; line-height: 1.75; margin-bottom: 48px;
-}
-
-/* ─── ABOUT ─── */
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1.1fr;
-  gap: 64px; align-items: start;
-}
-.about-photo {
-  width: 100%; aspect-ratio: 3/4;
-  background: linear-gradient(160deg, #0D1B2A 0%, #1a2e47 100%);
-  border-radius: var(--radius-lg);
+/* Hero teacher photo (right column) */
+.hero-photo-wrap {
+  position: relative; z-index: 1;
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.18); font-size: 0.85rem;
-  letter-spacing: 0.05em; position: relative; overflow: hidden;
+}
+.hero-photo-frame {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border:3px solid rgba(129,140,248,.35);
+  box-shadow: var(--shadow-lg), 0 0 0 8px rgba(30,96,145,0.10);
+  background: var(--blue-dark);
+}
+.hero-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-cert-strip {
+  position: absolute;
+  bottom: -18px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 8px; white-space: nowrap;
+}
+.cert-pill {
+  background: var(--blue-dark);
+  border: 1px solid rgba(245,158,11,0.28);
+  color: var(--gold);
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 5px 14px; border-radius: 100px;
+}
+
+/* ═══════════════════════════════════════════
+   SECTION SHARED
+═══════════════════════════════════════════ */
+.sec-white { background: var(--white);      padding: 96px 6%; }
+.sec-blue  { background: var(--blue-wash);  padding: 96px 6%; }
+.sec-dark  { background: var(--blue-dark);  padding: 96px 6%; }
+
+.section-eyebrow {
+  font-size: 0.70rem; font-weight: 700;
+  color: var(--blue-main);
+  text-transform: uppercase; letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+.section-eyebrow.light { color: var(--blue-tint); }
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: var(--text-dark); line-height: 1.15;
+  letter-spacing: -0.018em; margin-bottom: 14px;
+}
+.section-title.light { color: var(--white); }
+.section-sub {
+  font-size: 1rem; color: var(--text-body);
+  max-width: 540px; line-height: 1.78;
+  margin-bottom: 52px;
+}
+.section-sub.light { color: rgba(255,255,255,0.60); }
+.divider-rule {
+  width: 48px; height: 3px;
+  background: var(--blue-main);
+  border-radius: 2px;
+  margin: 18px 0 36px;
+}
+.divider-rule.gold { background: var(--gold); }
+
+/* ═══════════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════════ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 72px; align-items: start;
+}
+.about-photo-wrap { position: relative; }
+.about-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--blue-dark);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
 }
 .about-photo img {
-  width: 100%; height: 100%; object-fit: cover;
-  position: relative; z-index: 1;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
-.about-photo-glow {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 25%, rgba(67,56,202,0.28) 0%, transparent 70%);
+.certificate-card{
+    margin-top:20px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
 }
-.cert-chips {
-  position: absolute; bottom: 24px; left: 20px; right: 20px;
-  display: flex; gap: 8px; flex-wrap: wrap;
+.certificate-card img{
+    display:block;
+    width:100%;
+    height:auto;
 }
-.cert-chip {
-  background: rgba(255,255,255,0.1); backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.16);
-  color: rgba(255,255,255,0.85); font-size: 0.75rem;
-  font-weight: 600; padding: 5px 13px; border-radius: 100px;
-}
-.cert-chip.gold { border-color: rgba(245,158,11,0.45); color: var(--gold); }
 
+.about-since-badge {
+  position: absolute; top: 20px; right: -14px;
+  background: var(--blue-main);
+  color: var(--white);
+  font-size: 0.70rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 8px 16px; border-radius: 100px;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-bio .section-eyebrow { margin-bottom: 6px; }
 .about-bio h3 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.65rem; margin-bottom: 16px; letter-spacing: -0.02em;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem; letter-spacing: -0.02em;
+  margin-bottom: 6px; color: var(--text-dark);
 }
-.about-bio p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.78; }
-
-.achievement-list { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+.about-title-sub {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--blue-main); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 22px;
+}
+.about-bio p {
+  color: var(--text-body); margin-bottom: 16px;
+  line-height: 1.82; font-size: 0.96rem;
+}
+.achievement-list {
+  margin-top: 28px;
+  display: flex; flex-direction: column; gap: 10px;
+}
 .achievement-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 14px 16px; background: var(--bg);
-  border-radius: var(--radius); border: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 15px 18px;
+  background: var(--blue-wash);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
 }
 .ach-icon {
-  width: 36px; height: 36px; border-radius: 8px;
-  background: rgba(245,158,11,0.12);
+  width: 38px; height: 38px; border-radius: 9px;
+  background: var(--blue-tint);
   display: flex; align-items: center; justify-content: center;
   font-size: 1rem; flex-shrink: 0;
 }
-.ach-text strong { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 2px; }
-.ach-text span { font-size: 0.8rem; color: var(--text-muted); }
+.ach-text strong {
+  display: block; font-size: 0.875rem;
+  font-weight: 600; margin-bottom: 2px;
+  color: var(--text-dark);
+}
+.ach-text span { font-size: 0.80rem; color: var(--text-muted); line-height: 1.5; }
 
-/* Student results */
-.results-wrap { margin-top: 64px; }
+/* ── Student results ── */
+.results-wrap { margin-top: 72px; }
+.results-note {
+  font-size: 0.78rem; color: var(--text-muted);
+  font-style: italic; margin-bottom: 20px;
+}
 .results-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 18px; margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 16px; margin-top: 0;
 }
 .result-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 22px; text-align: center;
+  background: var(--blue-wash);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 22px 18px; text-align: center;
+  transition: box-shadow 0.2s;
 }
+.result-card:hover { box-shadow: var(--shadow-sm); }
 .result-score {
-  font-family: 'DM Serif Display', serif;
-  font-size: 2rem; color: var(--indigo); line-height: 1; margin-bottom: 4px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem; color: var(--blue-main);
+  line-height: 1; margin-bottom: 4px;
 }
 .result-exam {
-  font-size: 0.72rem; font-weight: 700; color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 0.09em; margin-bottom: 8px;
+  font-size: 0.70rem; font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.09em;
+  margin-bottom: 8px;
 }
-.result-name { font-size: 0.85rem; color: var(--text-secondary); }
+.result-name { font-size: 0.84rem; color: var(--text-body); }
 
-/* ─── COURSES ─── */
-.courses-block { margin-bottom: 48px; }
+/* ═══════════════════════════════════════════
+   COURSES
+═══════════════════════════════════════════ */
+.courses-block { margin-bottom: 52px; }
 .courses-type-header {
-  display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 26px;
 }
 .type-badge {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 5px 14px; border-radius: 100px; white-space: nowrap;
+  font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  padding: 5px 15px; border-radius: 100px; white-space: nowrap;
 }
-.type-badge.video { background: #EEF2FF; color: var(--indigo); }
-.type-badge.live  { background: #FFF7ED; color: var(--coral); }
-.type-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.25rem; color: var(--text-primary); white-space: nowrap;
+.type-badge.main {
+  background: var(--blue-tint); color: var(--blue-main);
+  border: 1px solid rgba(30,96,145,0.25);
 }
 .type-line { flex: 1; height: 1px; background: var(--border); }
 
 .courses-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+  gap: 22px;
 }
 .course-card {
-  background: var(--white); border: 1px solid var(--border);
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden;
   display: flex; flex-direction: column;
   transition: box-shadow 0.22s, transform 0.22s;
 }
-.course-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.09); transform: translateY(-3px); }
-.course-top { padding: 26px 26px 18px; flex: 1; }
-.course-top.vtype { border-top: 3px solid var(--indigo); }
-.course-top.ltype { border-top: 3px solid var(--coral); }
-.course-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
-.course-tag.vtag { color: var(--indigo); }
-.course-tag.ltag { color: var(--coral); }
+.course-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+.course-top {
+  padding: 26px 26px 18px; flex: 1;
+  border-top: 3px solid var(--blue-main);
+}
+.course-top.coral { border-top-color: var(--coral); }
+.course-tag.coral { color: var(--coral); }
+.course-tag {
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--blue-main); margin-bottom: 10px;
+}
 .course-name {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.3rem; color: var(--text-primary); margin-bottom: 8px; line-height: 1.22;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; color: var(--text-dark);
+  margin-bottom: 10px; line-height: 1.24;
 }
-.course-desc { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.68; }
-
-.level-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+.course-desc {
+  font-size: 0.86rem; color: var(--text-body); line-height: 1.72;
+}
+.level-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
 .lp {
-  font-size: 0.68rem; font-weight: 700; padding: 4px 11px;
-  border-radius: 100px; background: var(--bg);
-  color: var(--text-muted); border: 1px solid var(--border); letter-spacing: 0.04em;
+  font-size: 0.67rem; font-weight: 700;
+  padding: 4px 12px; border-radius: 100px;
+  letter-spacing: 0.04em;
 }
-.lp.indigo { background: var(--indigo); color: var(--white); border-color: var(--indigo); }
-.lp.purple { background: #7C3AED; color: var(--white); border-color: #7C3AED; }
-.lp.green  { background: #059669; color: var(--white); border-color: #059669; }
-.lp.sky    { background: #0369A1; color: var(--white); border-color: #0369A1; }
-.lp.coral  { background: var(--coral); color: var(--white); border-color: var(--coral); }
+.lp.pre    { background: #e0f0e8; color: #1a6640; }
+.lp.b1     { background: var(--blue-tint); color: var(--blue-dark); }
+.lp.b2     { background: #d4e8f7; color: #0d3a5c; }
+.lp.c1     { background: var(--blue-main); color: var(--white); }
+.lp.adv    { background: #2d1a6e; color: var(--white); }
+.lp.base   { background: #eaf4eb; color: #2a6640; }
+.lp.custom { background: var(--gold-light); color: var(--gold); border: 1px solid var(--gold-border); }
 
 .course-bottom {
-  padding: 18px 26px 22px; border-top: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 18px 26px 22px;
+  border-top: 1px solid var(--border-light);
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 12px;
 }
-.course-price { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--text-primary); }
-.course-price small { font-family: 'Inter', sans-serif; font-size: 0.73rem; color: var(--text-muted); display: block; font-weight: 400; }
-.btn-video {
-  background: var(--indigo); color: var(--white);
-  padding: 9px 18px; border-radius: 8px; font-size: 0.84rem; font-weight: 600;
+.course-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; color: var(--text-dark);
+}
+.course-price small {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.72rem; color: var(--text-muted);
+  display: block; font-weight: 400;
+}
+.btn-enroll {
+  background: var(--blue-main); color: var(--white);
+  padding: 9px 20px; border-radius: 8px;
+  font-size: 0.84rem; font-weight: 600;
   text-decoration: none; border: none; cursor: pointer;
   transition: background 0.2s; white-space: nowrap;
 }
-.btn-video:hover { background: #5046E5; }
-.btn-live {
-  background: var(--coral); color: var(--white);
-  padding: 9px 18px; border-radius: 8px; font-size: 0.84rem; font-weight: 600;
-  text-decoration: none; border: none; cursor: pointer;
-  transition: background 0.2s; white-space: nowrap;
+.btn-enroll:hover { background: var(--blue-mid); }
+.btn-enroll.c { background: var(--coral); }
+.btn-enroll.c:hover { background: var(--coral-hover); }
+.btn-consult {
+  background: transparent; color: var(--blue-main);
+  padding: 9px 20px; border-radius: 8px;
+  font-size: 0.84rem; font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--blue-main); cursor: pointer;
+  transition: background 0.2s, color 0.2s; white-space: nowrap;
 }
-.btn-live:hover { background: #EA6C0A; }
+.btn-consult:hover { background: var(--blue-main); color: var(--white); }
 
-/* ─── LIBRARY ─── */
+/* ═══════════════════════════════════════════
+   LIBRARY
+═══════════════════════════════════════════ */
 .library-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
 }
 .book-card {
-  background: var(--white); border: 1px solid var(--border);
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg); overflow: hidden;
   display: flex; flex-direction: column;
   transition: box-shadow 0.22s, transform 0.22s;
 }
-.book-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,0.09); transform: translateY(-3px); }
-.book-cover {
-  aspect-ratio: 3/4; display: flex; align-items: center;
-  justify-content: center; position: relative; overflow: hidden;
-  background: #f1f5f9;
+.book-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
 }
-.book-cover img {
-  width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1;
+/* Full-image book cover — no cropping */
+.book-cover{
+    width:100%;
+    height:420px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    background:#fff;
 }
-.book-cover-glow { position: absolute; inset: 0; }
-.book-cover-text {
-  font-family: 'DM Serif Display', serif; font-size: 1.1rem;
-  color: rgba(255,255,255,0.92); text-align: center; padding: 20px;
-  line-height: 1.3; position: relative; z-index: 1;
+.book-cover img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
 }
-.book-info { padding: 18px; flex: 1; display: flex; flex-direction: column; }
-.book-title { font-weight: 600; font-size: 0.92rem; margin-bottom: 6px; line-height: 1.4; }
-.book-desc { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.65; flex: 1; margin-bottom: 14px; }
-.book-footer { display: flex; align-items: center; justify-content: space-between; }
-.book-price { font-weight: 700; font-size: 0.95rem; color: var(--teal); }
+.book-info {
+  padding: 20px 22px 22px;
+  flex: 1; display: flex; flex-direction: column;
+}
+.book-label {
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--blue-main); margin-bottom: 7px;
+}
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; color: var(--text-dark);
+  margin-bottom: 8px; line-height: 1.35; font-weight: 600;
+}
+.book-desc {
+  font-size: 0.81rem; color: var(--text-body);
+  line-height: 1.68; flex: 1; margin-bottom: 18px;
+}
+.book-footer {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 10px;
+}
+.book-price {
+  font-weight: 700; font-size: 0.95rem;
+  color: var(--blue-main);
+}
 .btn-buy {
-  background: var(--teal); color: var(--white);
-  padding: 7px 15px; border-radius: 7px; font-size: 0.78rem;
-  font-weight: 600; text-decoration: none; border: none; cursor: pointer;
-  transition: background 0.2s;
+  background: var(--blue-main); color: var(--white);
+  padding: 8px 18px; border-radius: 7px;
+  font-size: 0.80rem; font-weight: 600;
+  text-decoration: none; border: none; cursor: pointer;
+  transition: background 0.2s; white-space: nowrap;
 }
-.btn-buy:hover { background: #0C7A71; }
+.btn-buy:hover { background: var(--blue-mid); }
 
-/* ─── CONTACT ─── */
+/* ═══════════════════════════════════════════
+   WHY SECTION (dark band)
+═══════════════════════════════════════════ */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+.why-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+}
+.why-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(30,96,145,0.35);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; margin-bottom: 16px;
+}
+.why-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem; color: var(--white);
+  margin-bottom: 8px;
+}
+.why-card p {
+  font-size: 0.84rem; color: rgba(255,255,255,0.55);
+  line-height: 1.72;
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════ */
 .contact-grid {
-  display: grid; grid-template-columns: 1fr 1.2fr;
-  gap: 60px; align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 64px; align-items: start;
 }
 .contact-info h3 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.5rem; margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem; margin-bottom: 14px;
+  color: var(--text-dark);
 }
-.contact-info > p { color: var(--text-secondary); line-height: 1.75; margin-bottom: 28px; }
+.contact-info > p {
+  color: var(--text-body); line-height: 1.78;
+  margin-bottom: 30px; font-size: 0.95rem;
+}
 .contact-links { display: flex; flex-direction: column; gap: 10px; }
 .contact-link {
-  display: flex; align-items: center; gap: 12px;
-  text-decoration: none; color: var(--text-primary); font-size: 0.88rem;
-  font-weight: 500; padding: 12px 16px; background: var(--bg);
-  border-radius: var(--radius); border: 1px solid var(--border);
-  transition: border-color 0.2s, background 0.2s;
+  display: flex; align-items: center; gap: 14px;
+  text-decoration: none; color: var(--text-dark);
+  font-size: 0.88rem; font-weight: 500;
+  padding: 13px 18px;
+  background: var(--blue-wash);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
 }
-.contact-link:hover { border-color: var(--indigo); background: var(--white); }
+.contact-link:hover {
+  border-color: var(--blue-main);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
 .clink-icon {
-  width: 38px; height: 38px; border-radius: 9px;
+  width: 40px; height: 40px; border-radius: 9px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; flex-shrink: 0;
+  font-size: 1.15rem; flex-shrink: 0;
 }
-.clink-meta strong { display: block; font-weight: 600; font-size: 0.875rem; margin-bottom: 1px; }
+.clink-meta strong {
+  display: block; font-weight: 600;
+  font-size: 0.875rem; margin-bottom: 1px;
+}
 .clink-meta span { font-size: 0.78rem; color: var(--text-muted); }
 
 .contact-form {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 34px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
 }
 .contact-form h4 {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.2rem; margin-bottom: 22px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem; margin-bottom: 24px;
+  color: var(--text-dark);
 }
 .form-group { margin-bottom: 18px; }
 .form-group label {
-  display: block; font-size: 0.75rem; font-weight: 600;
-  color: var(--text-secondary); margin-bottom: 7px;
-  text-transform: uppercase; letter-spacing: 0.06em;
+  display: block; font-size: 0.72rem; font-weight: 700;
+  color: var(--text-body); margin-bottom: 7px;
+  text-transform: uppercase; letter-spacing: 0.07em;
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+  width: 100%; padding: 11px 14px;
+  border: 1px solid var(--border);
   border-radius: 9px; font-family: inherit; font-size: 0.9rem;
-  color: var(--text-primary); background: var(--bg); outline: none;
-  transition: border-color 0.2s, background 0.2s; appearance: none;
+  color: var(--text-dark); background: var(--blue-pale); outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  appearance: none;
 }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color: var(--indigo); background: var(--white); }
-.form-group textarea { resize: vertical; min-height: 96px; }
+.form-group textarea:focus {
+  border-color: var(--blue-main);
+  background: var(--white);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
 .btn-submit {
-  width: 100%; background: var(--navy); color: var(--white);
-  padding: 13px; border-radius: var(--radius); font-size: 0.92rem;
-  font-weight: 600; border: none; cursor: pointer;
-  transition: background 0.2s; letter-spacing: 0.01em;
+  width: 100%; background: var(--blue-main); color: var(--white);
+  padding: 13px; border-radius: var(--radius);
+  font-size: 0.93rem; font-weight: 600;
+  border: none; cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
 }
-.btn-submit:hover { background: #1a2e47; }
+.btn-submit:hover { background: var(--blue-mid); }
 
-/* ─── FOOTER ─── */
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
 footer {
-  background: var(--navy); color: rgba(255,255,255,0.4);
-  text-align: center; padding: 28px 6%; font-size: 0.82rem;
+  background: var(--blue-ink);
+  border-top: 1px solid rgba(30,96,145,0.30);
+  padding: 48px 6%;
 }
-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-footer a:hover { color: var(--white); }
+.footer-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 24px;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  height: 55px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  color: var(--white); font-size: 1rem;
+  font-style: normal;
+}
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
-  .about-photo { aspect-ratio: 4/3; }
+.footer-copy {
+  font-size: 0.78rem; color: rgba(255,255,255,0.35);
+  line-height: 1.6;
+}
+.footer-copy a { color: rgba(255,255,255,0.50); text-decoration: none; }
+.footer-copy a:hover { color: var(--white); }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-photo-wrap { display: none; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .about-photo { aspect-ratio: 1 / 1; max-width: 340px; }
   nav .nav-links { display: none; }
-  .type-title { display: none; }
+
 }
-@media (max-width: 540px) {
-  .hero-stats { gap: 22px; }
-  .sec-white, .sec-gray { padding: 60px 5%; }
+@media (max-width: 560px) {
+  .hero { padding: 60px 5%; }
+  .sec-white, .sec-blue, .sec-dark { padding: 72px 5%; }
+  .hero-stats { gap: 24px; }
+  .book-cover { padding: 18px; }
 }
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #1e6091;
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 10px;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  pointer-events: none;
+  max-width: 320px;
+  line-height: 1.4;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.teacher-credentials{
+    margin:32px 0;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.credential-card{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);
+}
+
+.credential-icon{
+    width:64px;
+    height:64px;
+    border-radius:12px;
+    background:var(--blue-wash);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+    flex-shrink:0;
+}
+
+.credential-image{
+    width:100px;
+    height:70px;
+    object-fit:cover;
+    border-radius:8px;
+    border:1px solid var(--border);
+    flex-shrink:0;
+}
+
+.credential-content h4{
+    margin:0 0 4px;
+    font-size:1rem;
+    color:var(--text-dark);
+}
+
+.credential-content p{
+    margin:0;
+    color:var(--text-muted);
+    font-size:0.88rem;
+}
+
 </style>
+
+<link rel="icon" href="Will.png" type="image/png">
+
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
-<nav>
-  <a href="#home" class="nav-logo">English with <span>William</span></a>
+<!-- ══════════ NAV ══════════ -->
+<nav class="navbar">
+  <a href="#home" class="nav-brand">
+    <img src="Eng with Will.png" alt="English with William" class="nav-logo">
+    <span class="nav-divider"></span>
+    <span class="nav-sub">Trần Lâm Minh Huy</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">Giới thiệu</a></li>
     <li><a href="#courses">Khóa học</a></li>
     <li><a href="#library">Thư viện</a></li>
-    <li><a href="#contact" class="nav-cta">Liên hệ</a></li>
+    <li><a href="#contact" class="nav-cta">Đăng ký tư vấn</a></li>
   </ul>
 </nav>
 
-<!-- ═══ HERO ═══ -->
+<!-- ══════════ HERO ══════════ -->
 <section class="hero" id="home">
   <div class="hero-glow"></div>
+
+  <!-- Left: Text -->
   <div class="hero-content">
-    <div class="hero-badge">🏆 Cambridge Certified · FCE · CAE</div>
-    <h1>Luyện thi tiếng Anh<br><em>chứng chỉ quốc tế</em><br>và thi chuyên</h1>
-    <p class="hero-desc">Chuyên luyện thi FCE, CAE, thi vào chuyên THPT Anh, HSG tỉnh, HSG quốc gia, Olympic và Trại hè Phương Nam. Học theo lộ trình bài bản, sát đề thi thật.</p>
+    <div class="hero-badge">Giảng dạy từ 2018 &nbsp;·&nbsp; FCE &nbsp;·&nbsp; CAE &nbsp;·&nbsp; Chuyên Anh</div>
+    <h1>
+      Luyện thi Tiếng Anh<br>
+      <span class="hero-subline"><em>Học đúng trọng tâm</em></span>
+      <span class="hero-subline"><em>Học hiểu bản chất</em></span>
+      <span class="hero-subline"><em>Học có chiến lược</em></span>
+    </h1>
+    <p class="hero-desc">
+      English with William chuyên luyện thi vào lớp 10 Chuyên Anh, học sinh giỏi các cấp và chứng chỉ Cambridge như FCE, CAE. Các khóa học được xây dựng dựa trên kinh nghiệm giảng dạy nhiều năm, kết hợp phân tích đề thi thực tế và theo sát năng lực từng học viên, giúp học sinh hiểu cách làm bài thay vì học thuộc mẫu.
+    </p>
     <div class="hero-actions">
-      <a href="#courses" class="btn-primary">Xem khóa học →</a>
-      <a href="#about" class="btn-ghost">Về tôi</a>
+      <a href="#courses" class="btn-primary">Xem các khóa học →</a>
+      <a href="#about" class="btn-ghost">Giới thiệu về thầy</a>
     </div>
     <div class="hero-stats">
       <div>
-        <div class="stat-num">500<span>+</span></div>
-        <div class="stat-label">Học viên</div>
-      </div>
-      <div>
-        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-num">8<sup>+</sup></div>
         <div class="stat-label">Năm kinh nghiệm</div>
       </div>
       <div>
-        <div class="stat-num">12<span>+</span></div>
-        <div class="stat-label">HSG</div>
+        <div class="stat-num">500<sup>+</sup></div>
+        <div class="stat-label">Học viên đã đào tạo</div>
       </div>
+      <div>
+        <div class="stat-num">50<sup>+</sup></div>
+        <div class="stat-label">Giải HSG &amp; Olympic</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: Teacher photo -->
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-frame">
+      <img src="teacher.jpg" alt="Thầy Trần Lâm Minh Huy — Thầy Huy Chuyên Anh">
+    </div>
+    <div class="hero-cert-strip">
+      <span class="cert-pill">FCE</span>
+      <span class="cert-pill">CAE</span>
+      <span class="cert-pill">Since 2018</span>
     </div>
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ══════════ ABOUT ══════════ -->
 <section class="sec-white" id="about">
-  <div class="section-eyebrow">Giới thiệu</div>
   <div class="about-grid">
-    <!-- Photo -->
-    <div>
+    <!-- Photo column -->
+    <div class="about-photo-wrap">
       <div class="about-photo">
-        <div class="about-photo-glow"></div>
-        <img src="teacher.jpg" alt="Trần Lâm Minh Huy">
+        <img src="teacher.jpg" alt="Thầy Trần Lâm Minh Huy — Thầy Huy Chuyên Anh">
       </div>
+    
+      <div class="certificate-card">
+        <img src="cpe-certificate.jpg"
+             alt="Cambridge Certificate of Proficiency in English (CPE)">
+      </div>
+    
+      <div class="about-since-badge">Since 2018</div>
     </div>
-    <!-- Bio -->
+
+    <!-- Bio column -->
     <div class="about-bio">
-      <div class="section-eyebrow">Xin chào!</div>
-      <h3>Thầy Trần Lâm Minh Huy</h3>
-      <p>Hơn 3 năm giảng dạy tiếng Anh chuyên sâu, từng tốt nghiệp Đại học Cần Thơ. Tôi đã đồng hành với hàng trăm học viên từ mất gốc đến đoạt giải quốc gia.</p>
-      <p>Phương pháp của tôi: hiểu bản chất ngôn ngữ, không học vẹt — để học viên tự tin xử lý mọi dạng đề thi, kể cả những đề chưa từng gặp.</p>
+      <div class="section-eyebrow">Giới thiệu giảng viên</div>
+      <h3>Trần Lâm Minh Huy</h3>
+      <div class="about-title-sub">Giáo viên Tiếng Anh &nbsp;|&nbsp; Tốt nghiệp Đại học Cần Thơ</div>
+      <div class="divider-rule"></div>
+
+      <p>
+        Tôi tốt nghiệp chuyên ngành Sư phạm Tiếng Anh tại Đại học Cần Thơ và bắt đầu giảng dạy từ năm 2018.
+      </p>
+      <p>
+        Trong quá trình dạy học, tôi làm việc với nhiều nhóm học sinh khác nhau — từ những bạn mất gốc đến các bạn đang luyện thi chuyên hoặc hướng tới học sinh giỏi cấp tỉnh, cấp quốc gia.
+      </p>
+      <p>
+        Phương pháp giảng dạy của tôi được xây dựng trên nền tảng phân tích bản chất ngôn ngữ — không nhồi nhét, không học vẹt — nhằm phát triển tư duy ngôn ngữ độc lập cho từng học viên. Mỗi buổi học, tôi chú trọng phản hồi chi tiết và cá nhân hóa lộ trình theo điểm mạnh, điểm yếu riêng của từng em, đảm bảo học viên tự tin xử lý mọi dạng đề thi, kể cả những dạng bài chưa từng gặp.
+      </p>
+
       <div class="achievement-list">
+
         <div class="achievement-item">
-          <div class="ach-icon">🥇</div>
+          <div class="ach-icon">👨‍🏫</div>
           <div class="ach-text">
-            <strong>Học sinh Giỏi</strong>
-            <span>X HSG tỉnh · X HSG quốc gia</span>
+            <strong>Giáo viên Tiếng Anh</strong>
+            <span>Giảng dạy tại Trường THPT Chuyên Thủ Khoa Nghĩa.</span>
           </div>
         </div>
+      
         <div class="achievement-item">
-          <div class="ach-icon">🎯</div>
+          <div class="ach-icon">🎓</div>
           <div class="ach-text">
-            <strong>Chuyên Anh THPT</strong>
-            <span>Hơn X học viên đậu chuyên tỉnh &amp; quốc gia</span>
+            <strong>Tốt nghiệp Sư phạm Tiếng Anh loại Xuất sắc</strong>
+            <span>Đại học Cần Thơ · GPA 3.7/4.0 (Honors).</span>
           </div>
         </div>
+      
         <div class="achievement-item">
-          <div class="ach-icon">📜</div>
+          <div class="ach-icon">🏅</div>
           <div class="ach-text">
-            <strong>Chứng chỉ quốc tế</strong>
-            <span>X Grade A FCE · X Grade B CAE · X IELTS 8.0</span>
+            <strong>Cambridge CPE</strong>
+            <span>Certificate of Proficiency in English · C2 CEFR.</span>
           </div>
         </div>
+      
         <div class="achievement-item">
-          <div class="ach-icon">🏕️</div>
+          <div class="ach-icon">📚</div>
           <div class="ach-text">
-            <strong>Khác</strong>
-            <span>X Trại hè Phương Nam · X Olympic</span>
+            <strong>7 năm kinh nghiệm luyện thi</strong>
+            <span>Luyện thi vào lớp 10 Chuyên Anh tại các trường THPT chuyên trên toàn quốc.</span>
           </div>
         </div>
+      
+        <div class="achievement-item">
+          <div class="ach-icon">🏆</div>
+          <div class="ach-text">
+            <strong>Kinh nghiệm bồi dưỡng học sinh giỏi</strong>
+            <span>Đồng hành cùng học sinh trong các kỳ thi HSG cấp thành phố, tỉnh và quốc gia.</span>
+          </div>
+        </div>
+      
+        <div class="achievement-item">
+          <div class="ach-icon">⭐</div>
+          <div class="ach-text">
+            <strong>Học viên trúng tuyển nhiều trường Chuyên</strong>
+            <span>Lê Hồng Phong (TP.HCM), Phổ thông Năng Khiếu (ĐHQG TP.HCM), Lý Tự Trọng (Cần Thơ), Thoại Ngọc Hầu và Thủ Khoa Nghĩa (An Giang), cùng nhiều trường THPT chuyên khác.</span>
+          </div>
+        </div>
+      
       </div>
     </div>
   </div>
 
   <!-- Student Results -->
   <div class="results-wrap">
-    <div class="section-eyebrow">Thành tích học viên</div>
-    <h2 class="section-title">Kết quả nói lên tất cả</h2>
+    <div class="section-eyebrow">Thành tích học viên tiêu biểu</div>
+    <h2 class="section-title">Kết quả qua từng kỳ thi</h2>
+    <div class="divider-rule"></div>
+    <p class="results-note">Một số kết quả đại diện của học viên trong những năm qua. Tên học viên được viết tắt để bảo mật thông tin cá nhân.</p>
     <div class="results-grid">
       <div class="result-card">
-        <div class="result-score">185</div>
-        <div class="result-exam">Cambridge CAE</div>
-        <div class="result-name">Nguyễn Minh A. · Grade A</div>
+        <div class="result-score">A</div>
+        <div class="result-exam">Cambridge CAE (C1)</div>
+        <div class="result-name">N.M.A. · TP.HCM</div>
       </div>
       <div class="result-card">
-        <div class="result-score">178</div>
-        <div class="result-exam">Cambridge FCE</div>
-        <div class="result-name">Trần Bảo B. · Grade B</div>
+        <div class="result-score">A</div>
+        <div class="result-exam">Cambridge FCE (B2)</div>
+        <div class="result-name">T.B.B. · An Giang</div>
       </div>
       <div class="result-card">
         <div class="result-score">Giải Nhất</div>
-        <div class="result-exam">HSG Quốc gia 2024</div>
-        <div class="result-name">Lê Thị C. · TP.HCM</div>
+        <div class="result-exam">HSG Tỉnh Tiếng Anh</div>
+        <div class="result-name">L.T.C. · An Giang</div>
       </div>
       <div class="result-card">
-        <div class="result-score">9.8</div>
-        <div class="result-exam">Thi vào Chuyên Anh</div>
-        <div class="result-name">Phạm Đức D. · THPT Chuyên</div>
+        <div class="result-score">Đậu</div>
+        <div class="result-exam">10 Chuyên Anh THPT</div>
+        <div class="result-name">P.Đ.D. · Chuyên AG</div>
       </div>
       <div class="result-card">
-        <div class="result-score">Vàng</div>
+        <div class="result-score">HCV</div>
         <div class="result-exam">Trại hè Phương Nam</div>
-        <div class="result-name">Hoàng Gia E. · Đoàn AG</div>
+        <div class="result-name">H.G.E. · Đoàn AG</div>
       </div>
       <div class="result-card">
         <div class="result-score">Giải Ba</div>
         <div class="result-exam">Olympic Tiếng Anh QG</div>
-        <div class="result-name">Bùi Ngọc F. · 2023</div>
+        <div class="result-name">B.N.F. · 2023</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ COURSES ═══ -->
-<section class="sec-gray" id="courses">
-  <div class="section-eyebrow">Khóa học</div>
-  <h2 class="section-title">Chọn lộ trình phù hợp</h2>
-  <p class="section-sub">Đăng ký nhóm học trực tiếp — xếp lớp theo lịch cố định mỗi tuần.</p>
+<!-- ══════════ WHY ══════════ -->
+<section class="sec-dark">
+  <div class="section-eyebrow light">Phương pháp giảng dạy</div>
+  <h2 class="section-title light">Tại sao học viên chọn Thầy Huy?</h2>
+  <div class="divider-rule gold"></div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🧠</div>
+      <h4>Hiểu bản chất — không học vẹt</h4>
+      <p>Học sinh được hướng dẫn cách hiểu cấu trúc ngôn ngữ và tư duy làm bài, không phụ thuộc vào việc học thuộc mẫu.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📋</div>
+      <h4>Sát đề thi thực tế</h4>
+      <p>Tài liệu và bài tập được chọn lọc từ đề thi thật và xu hướng ra đề trong nhiều năm gần đây.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">👤</div>
+      <h4>Theo dõi cá nhân từng học viên</h4>
+      <p>Mỗi buổi học đều có phản hồi cụ thể, giúp học sinh biết mình đang tiến bộ ở đâu và cần cải thiện ở khía cạnh nào.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📚</div>
+      <h4>Tài liệu độc quyền tự biên soạn</h4>
+      <p>Hệ thống bài tập và tài liệu được tổng hợp và chỉnh sửa từ quá trình giảng dạy thực tế.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- LIVE COURSES -->
+<!-- ══════════ COURSES ══════════ -->
+<section class="sec-blue" id="courses">
+  <div class="section-eyebrow">Chương trình đào tạo</div>
+  <h2 class="section-title">Các khóa học hiện có</h2>
+  <p class="section-sub">Đăng ký nhóm học trực tiếp — lớp được sắp xếp theo lịch cố định hàng tuần, chia nhóm theo trình độ đầu vào.</p>
+
   <div class="courses-block">
     <div class="courses-type-header">
-      <span class="type-badge live">🎓 Nhóm học trực tiếp</span>
-      <span class="type-title">Đăng ký — xếp lớp theo lịch cố định</span>
+      <span class="type-badge main">Nhóm học trực tiếp</span>
       <div class="type-line"></div>
     </div>
     <div class="courses-grid">
+
       <!-- Chuyên THPT -->
       <div class="course-card">
-        <div class="course-top ltype">
-          <div class="course-tag ltag">Thi vào Chuyên THPT · Anh</div>
-          <div class="course-name">Luyện thi chuyên Anh THPT</div>
-          <div class="course-desc">Chia nhóm theo trình độ đầu vào. Học theo lịch cố định mỗi tuần, thầy chữa bài trực tiếp.</div>
+        <div class="course-top coral">
+          <div class="course-tag coral">Thi vào 10 Chuyên Anh THPT</div>
+          <div class="course-name">Luyện thi Chuyên Anh THPT</div>
+          <div class="course-desc">
+            Khóa học luyện thi vào lớp 10 chuyên Anh, tập trung vào các dạng bài thường gặp trong đề thi của Sở Giáo dục. Học sinh được phân nhóm theo trình độ để đảm bảo tốc độ học phù hợp, có chữa bài và phản hồi sau mỗi buổi.
+          </div>
           <div class="level-row">
-            <span class="lp green">Pre</span>
-            <span class="lp indigo">B1</span>
-            <span class="lp sky">B2</span>
-            <span class="lp purple">C1</span>
+            <span class="lp pre">Pre</span>
+            <span class="lp b1">B1</span>
+            <span class="lp b2">B2</span>
+            <span class="lp c1">C1</span>
           </div>
         </div>
         <div class="course-bottom">
-          <div class="course-price">[Giá]<small>/ tháng</small></div>
-          <a href="#contact" class="btn-live">Đăng ký</a>
+          <a href="#contact" class="btn-enroll c">Đăng ký</a>
         </div>
       </div>
+
       <!-- HSG Tỉnh -->
       <div class="course-card">
-        <div class="course-top ltype">
-          <div class="course-tag ltag">HSG Tiếng Anh</div>
+        <div class="course-top coral">
+          <div class="course-tag coral">HSG Tiếng Anh cấp Tỉnh</div>
           <div class="course-name">Luyện thi HSG cấp Tỉnh</div>
-          <div class="course-desc">Bám sát cấu trúc đề HSG tỉnh. Luyện chuyên Writing, Speaking, các dạng bài đặc thù thi cấp tỉnh với đề thi thật nhiều năm.</div>
+          <div class="course-desc">
+            Tập trung vào kỹ năng viết, đọc hiểu và xử lý các dạng bài nâng cao trong đề thi thực tế. Luyện chuyên sâu Writing, Speaking và các dạng bài đặc thù với bộ đề thi thật trong nhiều năm gần đây.
+          </div>
           <div class="level-row">
-            <span class="lp green">Beginner</span>
-            <span class="lp purple">Advanced</span>
+            <span class="lp base">Cơ bản</span>
+            <span class="lp adv">Nâng cao</span>
           </div>
         </div>
         <div class="course-bottom">
-          <div class="course-price">[Giá]<small>/ tháng</small></div>
-          <a href="#contact" class="btn-live">Đăng ký</a>
+          <a href="#contact" class="btn-enroll c">Đăng ký</a>
         </div>
       </div>
+
       <!-- HSG Quốc gia -->
       <div class="course-card">
-        <div class="course-top ltype">
-          <div class="course-tag ltag">HSG Tiếng Anh</div>
-          <div class="course-name">Luyện thi HSG Quốc gia</div>
-          <div class="course-desc">Nhóm nhỏ, cường độ cao. Yêu cầu đã có nền tảng HSG tỉnh hoặc tương đương. Chiến thuật và chiến lược thi quốc gia từng phần.</div>
+        <div class="course-top coral">
+          <div class="course-tag coral">HSG Tiếng Anh Quốc gia</div>
+          <div class="course-name">Luyện thi HSG cấp Quốc gia</div>
+          <div class="course-desc">
+            Dành cho học sinh đã có nền tảng tốt và muốn hướng tới các kỳ thi học sinh giỏi cấp cao hơn. Tập trung vào chiến lược làm bài và tối ưu điểm số.
+          </div>
           <div class="level-row">
-            <span class="lp green">Beginner</span>
-            <span class="lp purple">Advanced</span>
+            <span class="lp base">Cơ bản</span>
+            <span class="lp adv">Nâng cao</span>
           </div>
         </div>
         <div class="course-bottom">
-          <div class="course-price">[Giá]<small>/ tháng</small></div>
-          <a href="#contact" class="btn-live">Đăng ký</a>
+          <a href="#contact" class="btn-enroll c">Đăng ký</a>
         </div>
       </div>
+
       <!-- 1-1 -->
       <div class="course-card">
-        <div class="course-top ltype">
-          <div class="course-tag ltag">Cá nhân</div>
+        <div class="course-top">
+          <div class="course-tag">Dạy kèm cá nhân</div>
           <div class="course-name">Dạy kèm riêng 1 – 1</div>
-          <div class="course-desc">Lịch học linh hoạt, chương trình thiết kế riêng theo điểm yếu và mục tiêu của từng học viên. Phù hợp mọi cấp độ và kỳ thi.</div>
+          <div class="course-desc">
+            Lộ trình học được thiết kế riêng theo mục tiêu của từng học viên. Phù hợp cho các bạn cần cải thiện nhanh hoặc có mục tiêu thi cụ thể trong thời gian ngắn. Lịch học linh hoạt theo thoả thuận.
+          </div>
           <div class="level-row">
-            <span class="lp coral">Cá nhân hóa</span>
+            <span class="lp custom">Cá nhân hóa</span>
           </div>
         </div>
         <div class="course-bottom">
-          <div class="course-price">Liên hệ<small>báo giá riêng</small></div>
-          <a href="#contact" class="btn-live">Đặt lịch</a>
+          <a href="#contact" class="btn-enroll c">Đăng ký</a>
         </div>
       </div>
+
       <!-- Trại hè -->
       <div class="course-card">
-        <div class="course-top ltype">
-          <div class="course-tag ltag">Kỳ thi khu vực</div>
+        <div class="course-top coral">
+          <div class="course-tag coral">Kỳ thi khu vực</div>
           <div class="course-name">Ôn thi Trại hè Phương Nam</div>
-          <div class="course-desc">Luyện theo đề cương trại hè. Lớp mở theo từng kỳ thi — đăng ký để nhận thông báo khi có lịch khai giảng.</div>
+          <div class="course-desc">
+            Luyện theo đề cương Trại hè Phương Nam. Lớp mở theo từng kỳ thi — đăng ký trước để nhận thông báo khai giảng và tài liệu ôn tập đúng thời điểm.
+          </div>
           <div class="level-row">
-            <span class="lp green">Beginner</span>
-            <span class="lp purple">Advanced</span>
+            <span class="lp base">Cơ bản</span>
+            <span class="lp adv">Nâng cao</span>
           </div>
         </div>
         <div class="course-bottom">
-          <div class="course-price">[Giá]<small>/ khóa ngắn</small></div>
-          <a href="#contact" class="btn-live">Đăng ký</a>
+          <a href="#contact" class="btn-enroll c">Đăng ký</a>
         </div>
       </div>
+
       <!-- Olympic -->
       <div class="course-card">
-        <div class="course-top ltype">
-          <div class="course-tag ltag">Olympic Tiếng Anh</div>
+        <div class="course-top coral">
+          <div class="course-tag coral">Olympic Tiếng Anh</div>
           <div class="course-name">Ôn thi Olympic Tiếng Anh</div>
-          <div class="course-desc">Olympic cấp trường, huyện, tỉnh và quốc tế. Nhóm nhỏ, luyện sát đề thật, tập trung điểm mạnh — điểm yếu từng học viên.</div>
+          <div class="course-desc">
+            Luyện thi Olympic cấp Trường, Huyện, Tỉnh và Quốc tế. Nhóm nhỏ, luyện sát đề thật, tập trung xử lý từng điểm mạnh và điểm yếu của từng học viên.
+          </div>
           <div class="level-row">
-            <span class="lp green">Beginner</span>
-            <span class="lp purple">Advanced</span>
+            <span class="lp base">Cơ bản</span>
+            <span class="lp adv">Nâng cao</span>
           </div>
         </div>
         <div class="course-bottom">
-          <div class="course-price">[Giá]<small>/ tháng</small></div>
-          <a href="#contact" class="btn-live">Đăng ký</a>
+          <a href="#contact" class="btn-enroll c">Đăng ký</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ LIBRARY ═══ -->
+<!-- ══════════ LIBRARY ══════════ -->
 <section class="sec-white" id="library">
   <div class="section-eyebrow">Thư viện tài liệu</div>
-  <h2 class="section-title">Sách &amp; tài liệu do tôi biên soạn</h2>
-  <p class="section-sub">Đúc kết từ nhiều năm giảng dạy. Mua một lần, dùng mãi — không phụ thuộc khoá học.</p>
+  <h2 class="section-title">Sách &amp; tài liệu do thầy biên soạn</h2>
+  <div class="divider-rule"></div>
+  <p class="section-sub">Các tài liệu được biên soạn từ quá trình giảng dạy và luyện đề thực tế trong nhiều năm. Nội dung được cập nhật định kỳ để phù hợp với cấu trúc đề thi hiện hành.</p>
   <div class="library-grid">
+
     <div class="book-card">
       <div class="book-cover">
-        <img src="chuyen-anh.jpg" alt="Authentic Reading Tests — Chuyên Anh">
+        <img src="authentic-reading-tests.jpg" alt="Authentic Reading Tests">
       </div>
       <div class="book-info">
+        <div class="book-label">Reading · Revised 2024–2025</div>
         <div class="book-title">Authentic Reading Tests — Chuyên Anh</div>
-        <div class="book-desc">Ôn thi vào 10 Chuyên Anh, HSG THCS/THPT, Olympic 30/4, Trại hè… Bản Revised 2024–2025.</div>
+        <div class="book-desc">
+          Tuyển tập bài đọc hiểu độ khó cao, phục vụ ôn thi vào lớp 10 Chuyên Anh, Học sinh Giỏi THCS/THPT, Olympic 30 tháng 4 và Trại hè Phương Nam. Bản Revised 2024–2025, cập nhật xu hướng đề thi mới nhất.
+        </div>
         <div class="book-footer">
-          <span class="book-price">[Giá]</span>
-          <a href="#contact" class="btn-buy">Mua ngay</a>
+          <a href="#contact" class="btn-buy">Đặt mua</a>
         </div>
       </div>
     </div>
+
     <div class="book-card">
       <div class="book-cover">
-        <img src="bo-de.jpg" alt="Bộ đề luyện tập Vào 10 Chuyên Anh Sở TP.HCM">
+        <img src="bo-de-tphcm.jpg" alt="Bộ đề luyện tập Vào 10 Chuyên Anh Sở TP.HCM">
+
       </div>
       <div class="book-info">
+        <div class="book-label">Bộ đề · TP.HCM 2025</div>
         <div class="book-title">Bộ đề luyện tập — Vào 10 Chuyên Anh (Sở TP.HCM)</div>
-        <div class="book-desc">Dành cho HS lớp 8, 9 ôn thi TS10 chuyên Anh HCM hoặc HSG cấp THCS/THPT. Biên soạn Trần Lâm Minh Huy · 2025.</div>
+        <div class="book-desc">
+          Dành cho học sinh lớp 8, 9 ôn thi tuyển sinh lớp 10 Chuyên Anh trực thuộc Sở GD&amp;ĐT TP. Hồ Chí Minh, hoặc Học sinh Giỏi cấp THCS/THPT.
+        </div>
         <div class="book-footer">
-          <span class="book-price">[Giá]</span>
-          <a href="#contact" class="btn-buy">Mua ngay</a>
+          <a href="#contact" class="btn-buy">Đặt mua</a>
         </div>
       </div>
     </div>
+
     <div class="book-card">
       <div class="book-cover">
-        <img src="bo-de-luyen-tap.jpg" alt="Bộ đề luyện tập 10 Chuyên Anh C1 CEFR">
+        <img src="bo-de-c1.jpg" alt="Bộ đề luyện tập 10 Chuyên Anh C1 CEFR">
       </div>
       <div class="book-info">
-        <div class="book-title">Bộ đề luyện tập 10 Chuyên Anh — C1 CEFR</div>
-        <div class="book-desc">Theo mức độ C1 CEFR. Dành cho HS lớp 8, 9 trình độ B2 ôn thi vào 10 Chuyên Anh. Sưu tầm &amp; biên soạn Trần Lâm Minh Huy.</div>
+        <div class="book-label">Bộ đề · Chuẩn C1 CEFR</div>
+        <div class="book-title">Bộ đề luyện tập 10 Chuyên Anh — Mức độ C1 CEFR</div>
+        <div class="book-desc">
+          Theo chuẩn năng lực C1 CEFR. Dành cho học sinh lớp 8, 9 có trình độ B2 đang ôn thi vào lớp 10 Chuyên Anh.
+        </div>
         <div class="book-footer">
-          <span class="book-price">[Giá]</span>
-          <a href="#contact" class="btn-buy">Mua ngay</a>
+          <a href="#contact" class="btn-buy">Đặt mua</a>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
-<section class="sec-gray" id="contact">
-  <div class="section-eyebrow">Liên hệ</div>
-  <h2 class="section-title">Đăng ký hoặc hỏi thêm</h2>
-  <p class="section-sub">Để lại thông tin, tôi sẽ liên hệ lại trong 24 giờ để tư vấn lộ trình phù hợp.</p>
+<!-- ══════════ CONTACT ══════════ -->
+<section class="sec-blue" id="contact">
+  <div class="section-eyebrow">Liên hệ &amp; Đăng ký</div>
+  <h2 class="section-title">Đăng ký tư vấn hoặc hỏi thêm thông tin</h2>
+  <div class="divider-rule"></div>
+  <p class="section-sub">Nếu bạn cần tư vấn lộ trình học hoặc muốn tìm lớp phù hợp, có thể để lại thông tin bên dưới. Thầy sẽ phản hồi trong thời gian sớm nhất để trao đổi chi tiết hơn về mục tiêu học tập.</p>
+
   <div class="contact-grid">
+    <!-- Contact info -->
     <div class="contact-info">
-      <h3>Kết nối trực tiếp</h3>
-      <p>Nhắn qua Facebook để được phản hồi nhanh nhất. Với đăng ký nhóm học trực tiếp, tôi sẽ xếp lớp và gửi link tham gia sau khi xác nhận.</p>
+      <h3>Kênh liên lạc trực tiếp</h3>
+      <p>
+        Kênh liên hệ nhanh nhất là Facebook Messenger. Ngoài ra bạn có thể gửi email hoặc điền form để được hỗ trợ. Đối với đăng ký nhóm học, thầy sẽ xác nhận lịch và xếp lớp sau khi trao đổi trực tiếp về trình độ và mục tiêu của học viên. 
+      </p>
       <div class="contact-links">
         <a href="https://www.facebook.com/chuyenanhthpt" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <div class="clink-icon" style="background:#EEF2FF;">📘</div>
+          <div class="clink-icon" style="background:#e7f0fc;"><svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></div>
           <div class="clink-meta">
             <strong>Facebook</strong>
             <span>facebook.com/chuyenanhthpt</span>
           </div>
         </a>
         <a href="mailto:chuyenanhthpt@gmail.com" class="contact-link">
-          <div class="clink-icon" style="background:#F0FDF4;">📧</div>
+          <div class="clink-icon" style="background:#fff0f0;"><svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.527-1.145C21.69 2.28 24 3.434 24 5.457z"/><path fill="#EA4335" d="M24 5.457c0-2.023-2.309-3.178-3.927-1.964L18.546 4.64 12 9.548 5.455 4.64 3.927 3.493C2.309 2.28 0 3.434 0 5.457z"/></svg></div>
           <div class="clink-meta">
             <strong>Email</strong>
             <span>chuyenanhthpt@gmail.com</span>
           </div>
         </a>
         <a href="https://www.youtube.com/@mhuytran" target="_blank" rel="noopener noreferrer" class="contact-link">
-          <div class="clink-icon" style="background:#FFF7ED;">🔴</div>
+          <div class="clink-icon" style="background:#fde8e8;"><svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path fill="#FF0000" d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
           <div class="clink-meta">
             <strong>YouTube</strong>
             <span>@mhuytran</span>
@@ -739,55 +1260,116 @@ footer a:hover { color: var(--white); }
         </a>
       </div>
     </div>
-    <div class="contact-form">
-      <h4>Gửi thông tin đăng ký</h4>
+
+    <!-- Form -->
+    <form class="contact-form" id="contactForm">
+      <input type="hidden" name="access_key" value="aa5277c2-294a-48f5-81ed-1785394a28c2">
+      <h4>Gửi thông tin đăng ký tư vấn</h4>
       <div class="form-group">
         <label>Họ và tên học viên</label>
-        <input type="text" placeholder="Nguyễn Văn A">
+        <input type="text" name="name" placeholder="Ví dụ: Nguyễn Văn An" required>
       </div>
       <div class="form-group">
-        <label>Số điện thoại / Zalo</label>
-        <input type="tel" placeholder="0901 234 567">
+        <label>Số điện thoại / Zalo liên hệ</label>
+        <input type="tel" name="phone" placeholder="Ví dụ: 0901 234 567" required>
       </div>
       <div class="form-group">
-        <label>Khóa học quan tâm</label>
-        <select>
-          <option value="">Chọn khóa học...</option>
-          <optgroup label="Nhóm học trực tiếp">
-            <option>Luyện thi chuyên THPT Anh — Nhóm Pre</option>
-            <option>Luyện thi chuyên THPT Anh — Nhóm B1</option>
-            <option>Luyện thi chuyên THPT Anh — Nhóm B2</option>
-            <option>Luyện thi chuyên THPT Anh — Nhóm C1</option>
-            <option>HSG Tiếng Anh cấp Tỉnh — Beginner</option>
-            <option>HSG Tiếng Anh cấp Tỉnh — Advanced</option>
-            <option>HSG Tiếng Anh Quốc gia — Beginner</option>
-            <option>HSG Tiếng Anh Quốc gia — Advanced</option>
-            <option>Dạy kèm 1–1</option>
-            <option>Trại hè Phương Nam — Beginner</option>
-            <option>Trại hè Phương Nam — Advanced</option>
-            <option>Olympic Tiếng Anh — Beginner</option>
-            <option>Olympic Tiếng Anh — Advanced</option>
+        <label>Khóa học hoặc tài liệu quan tâm</label>
+        <select name="course">
+          <option value="">Vui lòng chọn...</option>
+          <optgroup label="Khóa luyện thi nhóm">
+            <option>Luyện thi vào 10 Chuyên Anh — Nhóm Pre</option>
+            <option>Luyện thi vào 10 Chuyên Anh — Nhóm B1</option>
+            <option>Luyện thi vào 10 Chuyên Anh — Nhóm B2</option>
+            <option>Luyện thi vào 10 Chuyên Anh — Nhóm C1</option>
+            <option>HSG Tiếng Anh cấp Tỉnh — Cơ bản</option>
+            <option>HSG Tiếng Anh cấp Tỉnh — Nâng cao</option>
+            <option>HSG Tiếng Anh Quốc gia — Cơ bản</option>
+            <option>HSG Tiếng Anh Quốc gia — Nâng cao</option>
+            <option>Ôn thi Trại hè Phương Nam</option>
+            <option>Ôn thi Olympic Tiếng Anh</option>
+          </optgroup>
+          <optgroup label="Dạy kèm cá nhân">
+            <option>Dạy kèm riêng 1–1 (báo giá theo yêu cầu)</option>
           </optgroup>
           <optgroup label="Tài liệu">
-            <option>Mua sách / tài liệu</option>
+            <option>Authentic Reading Tests — Chuyên Anh</option>
+            <option>Bộ đề Vào 10 Chuyên Anh (Sở TP.HCM)</option>
+            <option>Bộ đề Chuyên Anh — Mức C1 CEFR</option>
           </optgroup>
         </select>
       </div>
       <div class="form-group">
         <label>Ghi chú thêm</label>
-        <textarea placeholder="Trình độ hiện tại, mục tiêu, thắc mắc..."></textarea>
+        <textarea name="message" placeholder="Trình độ hiện tại, kỳ thi mục tiêu..."></textarea>
       </div>
-      <button class="btn-submit" onclick="alert('Đã gửi! Tôi sẽ liên hệ lại trong 24 giờ.')">
-        Gửi thông tin đăng ký →
+      <button type="submit" class="btn-submit">
+        Gửi thông tin đăng ký tư vấn →
       </button>
-    </div>
+    </form>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- ══════════ FOOTER ══════════ -->
 <footer>
-  <p>© 2026 English with William · Trần Lâm Minh Huy · Giảng dạy tiếng Anh chứng chỉ quốc tế &amp; thi chuyên · <a href="#home">↑ Về đầu trang</a></p>
+  <div class="footer-inner">
+    <img src="Eng with Will.png" alt="English with William" class="footer-logo">
+    <div class="footer-copy">
+      © 2026 Trần Lâm Minh Huy — Giảng dạy &amp; luyện thi Tiếng Anh chuyên sâu từ năm 2018.<br>
+      <a href="#home">↑ Về đầu trang</a>
+    </div>
+  </div>
 </footer>
+<!-- toàn bộ HTML của bạn -->
+
+<div id="toast" class="toast"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  
+    function showToast(message, isError = false) {
+      const toast = document.getElementById("toast");
+      if (!toast) return;
+  
+      toast.textContent = message;
+      toast.style.background = isError ? "#c0392b" : "#1e6091";
+  
+      toast.classList.add("show");
+  
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+    }
+  
+    const form = document.getElementById("contactForm");
+    if (!form) return;
+  
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const formData = new FormData(this);
+  
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+  
+        if (res.ok) {
+          showToast("Đăng ký đã được gửi. Thầy sẽ liên hệ với em sớm nhất có thể nhé!");
+          this.reset();
+        } else {
+          showToast("Gửi thất bại, vui lòng thử lại.", true);
+        }
+  
+      } catch (err) {
+        showToast("Lỗi kết nối, thử lại sau.", true);
+      }
+    });
+  
+  });
+  </script>
+  
 
 </body>
 </html>
